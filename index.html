@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QWERTY-MIDI</title>
+    <script src="webmidi.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1><span>QWERTY-MIDI</span></h1>
+    <div id="input-output-devices">
+    <!-- List of available MIDI devices, if available -->
+    </div>
+    <div id="app">
+    
+    <input 
+        type="range" 
+        id="vibrato-amount" 
+        name="vibrato-amount" 
+        min="0" 
+        max="1" 
+        step="0.01" 
+        value="0.25"
+    >
+        <div id="vibrato">
+            <button name="pb-btn" id="slow-vibrato">     Q  </button>
+            <button name="pb-btn" id="medium-vibrato">   W  </button>
+            <button name="pb-btn" id="fast-vibrato">     E  </button>
+        </div>
+        
+        <div id="pitch-up">
+            <button name="pb-btn" id="slow-pitchup">     A  </button>
+            <button name="pb-btn" id="medium-pitchup">   S  </button>
+            <button name="pb-btn" id="fast-pitchup">     D  </button>
+        </div>
+
+        <div id="pitch-down">
+            <button name="pb-btn" id="slow-pitchdown">   Z  </button>
+            <button name="pb-btn" id="medium-pitchdown"> X  </button>
+            <button name="pb-btn" id="fast-pitchdown">   C  </button>
+        </div>
+
+    </div>
+</body>
+
+<script src="setup.js"></script>
+<script src="utils.js"></script>
+<script src="waveforms.js"></script>
+
+</html>

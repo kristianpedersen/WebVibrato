@@ -1,0 +1,203 @@
+@import 'nib'
+
+// accent = #f5005f
+accent = #e05269
+bg = #ffe
+btnSize = 150
+wf = 10
+
+s = 70
+l = 80
+hue1 = 350
+hue2 = 80
+hue3 = 170
+step = 20
+
+btnhue = hue(accent)
+btnsat = saturation(accent)
+btnlightness = lightness(accent)
+
+btn1col = hsl(hue1+step*0, s, l + 5)
+btn2col = hsl(hue1+step*0, s, l + 0)
+btn3col = hsl(hue1+step*0, s, l - 5)
+
+btn4col = hsl(hue2+step*0, s, l + 5)
+btn5col = hsl(hue2+step*0, s, l + 0)
+btn6col = hsl(hue2+step*0, s, l - 5)
+
+btn7col = hsl(hue3+step*0, s, l + 5)
+btn8col = hsl(hue3+step*0, s, l + 0)
+btn9col = hsl(hue3+step*0, s, l - 5)
+
+body
+  font-family: sans-serif
+  
+html
+  height: 100%
+  background-color: white
+
+button
+  outline: none
+  
+line
+  stroke-width: 5px
+
+ol li
+  padding-top: 10px
+
+ol li ul li
+  padding-top: 0
+
+input[type=range]
+  margin: 35px 0px 25px 0px
+
+svg
+  position: relative
+  top: -59px
+  left: -6px
+  stroke-width: 2px
+  stroke: #fff
+  fill: #fff
+
+border-radius(n)
+  -webkit-border-radius n px
+  -moz-border-radius n px
+  border-radius n px
+
+
+button
+  width: btnSize px
+  height: btnSize px
+  margin-right: -5px
+  background-color: accent
+  border: none
+  font-size: 50px
+  color: #333
+  clear: left
+
+p.info span
+  background-color: lighten(#9e9, 50%)
+  padding: 10px
+  border-radius(10)
+
+h1 span, h2
+  font-family: "Segoe UI", serif
+
+h1 span
+  font-size: 60px
+  border-bottom: 5px solid accent
+
+h1
+  margin-top: 0px
+  margin-bottom: 30px
+
+a:hover
+  color: accent
+
+div#input-output
+  margin-bottom: 20px
+  
+div#output
+  margin-top: 40px
+
+label
+  border-radius(10px)
+  padding: 15px
+  padding-left: 5px
+  margin-top: 10px
+
+label:hover
+  background-color: lighten(accent, 50%)
+
+div#btn
+  margin-top: 20px
+
+label.selected
+  background-color: accent
+  color: #fff
+
+  
+p.waveform
+  background-color: white
+  border-radius: 50%
+  width: wf px
+  height: wf px
+  position: relative
+  // transform-origin: center center
+  // top: 50%
+  // animation: linX 5s infinite
+  animation: sineY 5s alternate infinite ease-in-out
+
+button:hover
+  color: #fff
+  
+button.selected
+  color: white
+
+// VIBRATO
+button#slow-vibrato
+  background-color: btn1col
+button#slow-vibrato.selected
+  background-color: darken(btn1col, 20)
+  
+button#medium-vibrato
+  background-color: btn2col
+button#medium-vibrato.selected
+  background-color: darken(btn2col, 20)
+
+button#fast-vibrato
+  background-color: btn3col
+button#fast-vibrato.selected
+  background-color: darken(btn3col, 20)
+
+// PITCHUP  
+button#slow-pitchup
+  background-color: btn4col
+button#slow-pitchup.selected
+  background-color: darken(btn4col, 20)
+  
+button#medium-pitchup
+  background-color: btn5col
+button#medium-pitchup.selected
+  background-color: darken(btn5col, 20)
+
+button#fast-pitchup
+  background-color: btn6col
+button#fast-pitchup.selected
+  background-color: darken(btn6col, 20)
+
+// PITCHDOWN
+button#slow-pitchdown
+  background-color: btn7col
+button#slow-pitchdown.selected
+  background-color: darken(btn7col, 20)
+  
+button#medium-pitchdown
+  background-color: btn8col
+button#medium-pitchdown.selected
+  background-color: darken(btn8col, 20)
+
+button#fast-pitchdown
+  background-color: btn9col
+button#fast-pitchdown.selected
+  background-color: darken(btn9col, 20)
+
+#status
+  margin-top: 30px
+  
+div.error
+  margin-top: 50px
+
+ol li
+  margin: 10px 0
+  
+canvas
+  margin-top: 10px
+  
+p.info
+	position: absolute
+	bottom: 0
+	right: 10px
+
+p#animator
+	background-color: lime

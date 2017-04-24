@@ -3,6 +3,10 @@
 Do you also lack a pitch/mod wheel? 
 WebVibrato takes care of it by moving the pitchbend wheel for you when you press a key.
 
+[Demo](http://kristianpedersen.no/webvibrato/)
+
+Note: It's easier to adjust WebVibrato when your synth's pitch bend range has a low value like -2 semitones.
+
 WebVibrato was made using [WebMidi.js](https://github.com/cotejp/webmidi)
 
 ## Description

@@ -1,15 +1,13 @@
 # WebVibrato
 
-My MIDI keyboard doesn't have a pitch/mod wheel, so I set out to make a fun browser tool.
+Do you also lack a pitch/mod wheel? 
+WebVibrato takes care of it by moving the pitchbend wheel for you when you press a key.
 
-Software synthesizers don't always use the modwheel for vibrato. It would be kind of silly for lush strings to have vibrato. 
+WebVibrato was made using [WebMidi.js](https://github.com/cotejp/webmidi)
 
-WebVibrato doesn't do modwheel control - it simply shifts the pitchbend really, really fast. 
+## Description
 
-![Image showing how WebVibrato controls pitch bend instead of mod wheel.]
-(pbvibrato.png)
-
-WebVibrato has three rows:
+WebVibrato has three rows, all of which have 3 speeds (super slow, normal, super fast):
 * Vibrato
 * Upwards pitch slides
 * Downwards pitch slides

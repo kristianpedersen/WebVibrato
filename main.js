@@ -23,37 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 WebMidi.enable(error => {
-    if (!navigator.userAgent.toLowerCase().includes("chrome")) {
-
+    if (error) {
         document.getElementById("app").style.display = "none";
-        document.write('MIDI is only supported in Chrome.');
-        document.write('<p><a href="https://www.google.no/chrome/browser/desktop/index.html">Download Chrome</a></p>');
-
-    } else if (WebMidi.outputs.length === 0) {
-
-        document.write('<head><meta charset="UTF-8"><title>QWERTY-MIDI</title>    <script src="node_modules/webmidi/webmidi.min.js"></script>    <link rel="stylesheet" type="text/css" href="style.css"></head>');
-        document.write("<p style='margin-top: 20px'><span style='background-color: #e05269; color: white; padding: 5px; border-radius: 5px;'>Error: Couldn't find any virtual MIDI ports</span></p>");
-        document.write('<p>Windows: <a href="http://www.nerds.de/en/download.html">http://www.nerds.de/en/download.html</a></p>');
-        document.write('<p>Mac OSX: <a href="https://help.ableton.com/hc/en-us/articles/209774225-Using-virtual-MIDI-buses-in-Live">https://help.ableton.com/hc/en-us/articles/209774225-Using-virtual-MIDI-buses-in-Live</a></p></ul></li>');
-        document.getElementById("app").style.display = "none";
-
-    } else if (error) {
-
-        document.write("<p><span style='background-color: #e05269; color: white; padding: 5px; border-radius: 5px;'>\"" + error + "\"</span></p>");
-        document.write('<h2>Mulige løsninger:</h2>');
-        document.write('<ol><li>Bruk <a href="https://www.google.no/chrome/browser/desktop/index.html"><img src="https://www.google.com/images/icons/product/chrome-32.png" width="16" />  Chrome</a></li>');
-        document.write('<li>Installer virtuell MIDI-port:');
+        // document.write("<p><span style='background-color: #e05269; color: white; padding: 5px; border-radius: 5px;'>\"" + error + "\"</span></p>");
+        document.write(`<p><span style="background-color: #e05269; color: white; padding: 5px; border-radius: 5px;"> ${error}</span></p>`);
+        document.write('<ol><li>Use <a href="https://www.google.no/chrome/browser/desktop/index.html"><img src="https://www.google.com/images/icons/product/chrome-32.png" width="16" /> Google Chrome</a></li>');
+        document.write('<li>Install virtual MIDI port:');
         document.write('<ul><li>Windows: <a href="http://www.nerds.de/en/download.html">http://www.nerds.de/en/download.html</a></li>');
         document.write('<li>Mac OSX: <a href="https://help.ableton.com/hc/en-us/articles/209774225-Using-virtual-MIDI-buses-in-Live">https://help.ableton.com/hc/en-us/articles/209774225-Using-virtual-MIDI-buses-in-Live</a></li></ul></li>');
         document.getElementById("app").style.display = "none";
-
     } else {
 
         deviceListHTML.push("<div id='output' class='midi-section'>");
         deviceListHTML.push("<form id='output'>");
 
         WebMidi.outputs.forEach((output, i) => {
-            deviceListHTML.push('<label for"output" id="outputLabel"><input id="' + i + '"onclick="selectMIDIOutput()" type="radio" name="output" value="' + output.name + '"> ' + output.name + "</label>");
+            deviceListHTML.push(`<label for"output" id="outputLabel"><input id="${i}" onclick="selectMIDIOutput()" type="radio" name="output" value="${output.name}">${output.name}</label>`);
         });
 
         deviceListHTML.push("</form>");
